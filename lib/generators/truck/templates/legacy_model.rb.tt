@@ -1,0 +1,12 @@
+class Legacy<%= file_name.classify %> < LegacyBase
+  self.table_name = "NAME_OF_TABLE_WHERE_<%= file_name.upcase %>_MODEL_DATA_IS_STORED"
+
+  def map
+    {
+      # NEW         # OLD
+      :field_one => self.old_field_one.squish,
+      :field_two => self.old_field_two.squish
+    }
+  end
+
+end

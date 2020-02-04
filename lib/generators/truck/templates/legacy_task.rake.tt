@@ -1,0 +1,13 @@
+require 'trucker'
+include Trucker
+
+namespace :db do
+  namespace :migrate do
+
+    desc 'Migrates <%= ActiveSupport::Inflector.pluralize(file_name).downcase %>'
+    task :<%= ActiveSupport::Inflector.pluralize(file_name).downcase %> => :environment do
+      Trucker.migrate :<%= ActiveSupport::Inflector.pluralize(file_name).downcase %>
+    end
+
+  end
+end

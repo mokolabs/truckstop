@@ -1,0 +1,5 @@
+Description:
+    Generates a moving "truck" to help move legacy data into a Rails app
+
+Example:
+    rails generate truck
