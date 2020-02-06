@@ -27,11 +27,26 @@ module Trucker
       counter += offset if offset
       total_records = legacy_model.where(options[:where]).all.count
 
+      # Set up error tracking
+      errors = []
+
       # Start import
       legacy_model.where(options[:where]).limit(limit).offset(offset).each do |record|
         counter += 1
         puts status + " (#{counter}/#{total_records})"
-        record.migrate
+        error = record.migrate
+        errors << error unless error == nil
+      end
+
+      # Show errors
+      if errors.count > 0
+        puts "#{errors.counts} ERRORS"
+
+        errors.each do |error|
+          puts "...................."
+          puts error
+          puts "...................."
+        end
       end
 
       # Reset primary key sequence value for new records
