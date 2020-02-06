@@ -44,7 +44,7 @@ module Trucker
 
         errors.each do |error|
           puts "...................."
-          puts error.full_messages
+          puts error.inspect
           puts "...................."
         end
       end
