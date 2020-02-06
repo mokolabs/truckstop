@@ -40,11 +40,11 @@ module Trucker
 
       # Show errors
       if errors.count > 0
-        puts "#{errors.count} ERRORS"
+        puts "\n\n#{errors.count} ERRORS"
 
         errors.each do |error|
           puts "...................."
-          puts error.inspect
+          puts error.full_messages
           puts "...................."
         end
       end
