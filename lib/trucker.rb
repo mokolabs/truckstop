@@ -17,6 +17,10 @@ module Trucker
       # Wipe out existing records
       model.delete_all
 
+      # Reset primary key sequence value for new records
+      # (so values for new records don't clash with old records)
+      model.reset_pk_sequence
+
       # Status message
       status = "Migrating "
       status += "#{limit || "all"} #{label || name}"
