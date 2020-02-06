@@ -40,7 +40,7 @@ module Trucker
 
       # Show errors
       if errors.count > 0
-        puts "#{errors.counts} ERRORS"
+        puts "#{errors.count} ERRORS"
 
         errors.each do |error|
           puts "...................."
