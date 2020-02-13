@@ -144,8 +144,9 @@ The best part is you don't have to run this migration just once. You can run it 
 
       # Insert helper methods as needed
       def tweak_body(body)
-        body = body.gsub(/<br \//,"\n") # <= Convert break tags into normal line breaks
-        body = body.gsub(/teh/, "the")  # <= Fix common typos
+        self
+          .gsub(/<br \//,"\n") # <= Convert break tags into normal line breaks
+          .gsub(/teh/, "the")  # <= Fix common typos
       end
     end
     ```
@@ -277,6 +278,7 @@ The following folks have made significant contributions to trucker:
 - [Roel Bondoc](https://github.com/roelbondoc/)
 - [Olivier Lacan](https://github.com/olivierlacan/)
 - [Nick Schwaderer](https://github.com/Schwad)
+- [Giles Bowket](https://github.com/gilesbowkett)
 
 
 ## License
